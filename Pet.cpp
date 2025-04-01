@@ -1,18 +1,24 @@
 #include "Pet.h"
+using namespace std;
 
 // Default constructor
 Pet::Pet() : name("Unnamed"), species("Unknown"), age(0), hungerLevel(5) {}
 
 // Parameterized constructor
-Pet::Pet(const std::string& name, const std::string& species, int age, int hungerLevel)
+Pet::Pet(const string& name, const string& species, int age, int hungerLevel)
     : name(name), species(species), age(age), hungerLevel(hungerLevel) {}
 
+// Destructor
+Pet::~Pet(){
+    cout<< name << " has been deconstructed.\n";
+}
+
 // Accessors
-std::string Pet::getName() const {
+string Pet::getName() const {
     return name;
 }
 
-std::string Pet::getSpecies() const {
+string Pet::getSpecies() const {
     return species;
 }
 
@@ -25,11 +31,11 @@ int Pet::getHungerLevel() const {
 }
 
 // Mutators
-void Pet::setName(const std::string& name) {
+void Pet::setName(const string& name) {
     this->name = name;
 }
 
-void Pet::setSpecies(const std::string& species) {
+void Pet::setSpecies(const string& species) {
     this->species = species;
 }
 
@@ -54,8 +60,17 @@ int Pet::compareTo(const Pet& other) const {
 
 // Output
 void Pet::printInfo() const {
-    std::cout << "Pet Name: " << name << std::endl;
-    std::cout << "Species: " << species << std::endl;
-    std::cout << "Age: " << age << std::endl;
-    std::cout << "Hunger Level: " << hungerLevel << "/10" << std::endl;
+    cout << "Pet Name: " << name << endl;
+    cout << "Species: " << species << endl;
+    cout << "Age: " << age << endl;
+    cout << "Hunger Level: " << hungerLevel << "/10" << endl;
+}
+
+// Adding:
+void Pet::makeSound() const {
+    cout << name << " makes an undefined noise.\n";
+}
+
+void Pet::play() const {
+    cout << name << " is playing.\n";
 }

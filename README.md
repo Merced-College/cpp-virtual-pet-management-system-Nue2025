@@ -6,4 +6,3 @@ virtual-pet/
 ├── main.cpp
 ├── Pet.cpp
 └── Pet.h
-
