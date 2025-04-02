@@ -12,6 +12,9 @@ class Groot : public Pet {
 
     public:
         Groot();
+
+        //virtual ~Groot(); //Deconstructor
+
         
         Groot(const string& name, const string& species, int age, int hungerLevel, const string& favoriteMusic);
 
